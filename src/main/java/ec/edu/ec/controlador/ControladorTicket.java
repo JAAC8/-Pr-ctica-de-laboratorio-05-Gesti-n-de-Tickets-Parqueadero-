@@ -5,10 +5,34 @@
  */
 package ec.edu.ec.controlador;
 
+import ec.edu.ec.dao.DAOTicketI;
+import ec.edu.ec.dao.DAOTicket;
+
 /**
  *
  * @author José Andrés Abad
  */
 public class ControladorTicket {
-    
+
+    private DAOTicketI dao;
+    private ControladorCliente cC;
+    private ControladorVehiculo cV;
+
+    public void crear(DAOTicket dao, ControladorCliente cC, ControladorVehiculo cV) {
+        this.dao = this.dao;
+        this.cC = cC;
+        this.cV = cV;
+    }
+
+    public void leer() {
+
+    }
+
+    public void actualizar() {
+
+    }
+
+    public void eliminar() {
+
+    }
 }
