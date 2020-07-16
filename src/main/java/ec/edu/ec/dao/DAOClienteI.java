@@ -12,9 +12,14 @@ import ec.edu.ec.modelo.Cliente;
  * @author José Andrés Abad
  */
 public interface DAOClienteI {
+
     public void create(Cliente c);
+
     public Cliente read(int cedula);
+
     public void update(Cliente c);
+
     public void delete(int cedula);
+
     public void findAll();
 }

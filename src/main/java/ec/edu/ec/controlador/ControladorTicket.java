@@ -18,10 +18,14 @@ public class ControladorTicket {
     private ControladorCliente cC;
     private ControladorVehiculo cV;
 
-    public void crear(DAOTicket dao, ControladorCliente cC, ControladorVehiculo cV) {
+    public ControladorTicket(ControladorCliente cC, ControladorVehiculo cV) {
         this.dao = this.dao;
         this.cC = cC;
         this.cV = cV;
+    }
+
+    public void crear() {
+
     }
 
     public void leer() {

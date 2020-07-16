@@ -10,5 +10,5 @@ package ec.edu.ec.dao;
  * @author José Andrés Abad
  */
 public interface DAOTicketI {
-    
+
 }

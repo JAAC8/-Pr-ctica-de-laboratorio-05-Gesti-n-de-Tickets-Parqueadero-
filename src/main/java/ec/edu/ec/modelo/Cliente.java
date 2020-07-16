@@ -12,17 +12,18 @@ import java.util.List;
  * @author José Andrés Abad
  */
 public class Cliente {
+
     private int cedula;
     private String nombre;
     private String direccion;
     private String telefono;
     private List<Vehiculo> vehiculos;
-    
-    public Cliente(int cedula, String nombre, String direccion, String telefono){
-        this.cedula=cedula;
-        this.nombre=nombre;
-        this.direccion=direccion;
-        this.telefono=telefono;
+
+    public Cliente(int cedula, String nombre, String direccion, String telefono) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
     public int getCedula() {
@@ -95,5 +96,4 @@ public class Cliente {
         return "Cliente{" + "cedula=" + cedula + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + ", vehiculos=" + vehiculos + '}';
     }
 
-    
 }

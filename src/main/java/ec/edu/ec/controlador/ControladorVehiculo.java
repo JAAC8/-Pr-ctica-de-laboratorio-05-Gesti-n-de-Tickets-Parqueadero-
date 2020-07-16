@@ -13,29 +13,30 @@ import ec.edu.ec.dao.DAOVehiculo;
  * @author José Andrés Abad
  */
 public class ControladorVehiculo {
+
     private DAOVehiculoI dao;
     private ControladorCliente cC;
     private ControladorTicket cT;
-    
-    public ControladorVehiculo(DAOVehiculo dao, ControladorCliente cC, ControladorTicket cT){
-        this.dao=dao;
-        this.cC=cC;
-        this.cT=cT;
+
+    public ControladorVehiculo(ControladorCliente cC, ControladorTicket cT) {
+        this.dao = new DAOVehiculo();
+        this.cC = cC;
+        this.cT = cT;
     }
-    
-    public void crear(){
-        
+
+    public void crear() {
+
     }
-    
-    public void leer(){
-    
+
+    public void leer() {
+
     }
-    
-    public void actualizar(){
-        
+
+    public void actualizar() {
+
     }
-    
-    public void eliminar(){
-        
+
+    public void eliminar() {
+
     }
 }

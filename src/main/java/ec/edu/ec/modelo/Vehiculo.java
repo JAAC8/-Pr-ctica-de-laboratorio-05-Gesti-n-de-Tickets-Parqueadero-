@@ -12,14 +12,15 @@ import java.util.Objects;
  * @author José Andrés Abad
  */
 public class Vehiculo {
+
     private String placa;
     private String marca;
     private String modelo;
-    
-    public Vehiculo(String placa, String marca,String modelo){
-        this.placa=placa;
+
+    public Vehiculo(String placa, String marca, String modelo) {
+        this.placa = placa;
         this.marca = marca;
-        this.modelo=modelo;
+        this.modelo = modelo;
     }
 
     public String getPlaca() {
@@ -75,6 +76,5 @@ public class Vehiculo {
     public String toString() {
         return "Vehiculo{" + "placa=" + placa + ", marca=" + marca + ", modelo=" + modelo + '}';
     }
-    
-    
+
 }

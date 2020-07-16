@@ -19,8 +19,8 @@ public class ControladorCliente {
     private ControladorTicket cT;
     private ControladorVehiculo cV;
 
-    public ControladorCliente(DAOCliente dao, ControladorTicket cT, ControladorVehiculo cV) {
-        this.dao = dao;
+    public ControladorCliente(ControladorTicket cT, ControladorVehiculo cV) {
+        this.dao = new DAOCliente();
         this.cT = cT;
         this.cV = cV;
     }
@@ -31,14 +31,14 @@ public class ControladorCliente {
     }
 
     public void leer() {
-        
+
     }
 
     public void actualizar() {
-        
+
     }
 
     public void eliminar() {
-        
+
     }
 }

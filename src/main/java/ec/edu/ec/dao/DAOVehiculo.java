@@ -12,7 +12,7 @@ import ec.edu.ec.modelo.Vehiculo;
  * @author José Andrés Abad
  */
 public class DAOVehiculo implements DAOVehiculoI {
-    
+
     @Override
     public void create(Vehiculo v) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -37,5 +37,5 @@ public class DAOVehiculo implements DAOVehiculoI {
     public void findAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

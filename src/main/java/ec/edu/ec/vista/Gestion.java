@@ -17,26 +17,28 @@ import ec.edu.ec.dao.DAOVehiculo;
  * @author José Andrés Abad
  */
 public class Gestion extends javax.swing.JFrame {
-    
-    private Menu vRT;
-    
+
+    private IngresoVehiculo vIV;
+
     private ControladorCliente cC;
     private ControladorVehiculo cV;
     private ControladorTicket cT;
-    
+
     private DAOClienteI daoC;
     private DAOVehiculo daoV;
     private DAOTicket daoT;
-    
-    
+
     /**
      * Creates new form Gestion
      */
     public Gestion() {
         initComponents();
-        
-        vRT = new Menu();
-        
+
+        vIV = new IngresoVehiculo();
+
+        cC = new ControladorCliente(cT, cV);
+        cV = new ControladorVehiculo(cC, cT);
+        cT = new ControladorTicket(cC, cV);
     }
 
     /**
@@ -52,6 +54,8 @@ public class Gestion extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,13 +69,26 @@ public class Gestion extends javax.swing.JFrame {
 
         openMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Registrar Ticket");
+        openMenuItem.setText("Ingresar Vehiculo");
         openMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuItemActionPerformed(evt);
             }
         });
         fileMenu.add(openMenuItem);
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Salida de Vehiculo");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem1);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText("Listar Tickets");
+        fileMenu.add(jMenuItem2);
 
         exitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         exitMenuItem.setMnemonic('x');
@@ -106,9 +123,13 @@ public class Gestion extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
-        desktopPane.add(vRT);
-        vRT.setVisible(true);
+        desktopPane.add(vIV);
+        vIV.setVisible(true);
     }//GEN-LAST:event_openMenuItemActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +170,8 @@ public class Gestion extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     // End of variables declaration//GEN-END:variables

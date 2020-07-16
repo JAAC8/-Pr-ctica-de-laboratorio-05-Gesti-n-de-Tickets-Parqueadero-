@@ -13,12 +13,14 @@ import java.util.Set;
  *
  * @author José Andrés Abad
  */
-public class DAOCliente implements DAOClienteI{
+public class DAOCliente implements DAOClienteI {
+
     Set<Cliente> clientes;
-    public DAOCliente(){
+
+    public DAOCliente() {
         clientes = new HashSet<>();
     }
-    
+
     @Override
     public void create(Cliente c) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -43,5 +45,5 @@ public class DAOCliente implements DAOClienteI{
     public void findAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

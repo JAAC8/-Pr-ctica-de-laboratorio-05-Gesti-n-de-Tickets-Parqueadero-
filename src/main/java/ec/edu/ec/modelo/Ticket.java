@@ -12,13 +12,14 @@ import java.util.Date;
  * @author José Andrés Abad
  */
 public class Ticket {
+
     private int numero;
     private Date fI;
     private Date fS;
     private double total;
     private Vehiculo vehiculo;
-    
-    public Ticket(int numero){
+
+    public Ticket(int numero) {
         this.numero = numero;
         this.fI = new Date();
     }
@@ -67,6 +68,5 @@ public class Ticket {
     public String toString() {
         return "Ticket{" + "numero=" + numero + ", fI=" + fI + ", fS=" + fS + ", total=" + total + ", vehiculo=" + vehiculo + '}';
     }
-    
-    
+
 }
