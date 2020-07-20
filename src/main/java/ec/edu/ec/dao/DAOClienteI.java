@@ -15,11 +15,11 @@ public interface DAOClienteI {
 
     public void create(Cliente c);
 
-    public Cliente read(int cedula);
+    public Cliente read(String cedula);
 
     public void update(Cliente c);
 
-    public void delete(int cedula);
+    public void delete(String cedula);
 
     public void findAll();
 }

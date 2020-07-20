@@ -6,6 +6,7 @@
 package ec.edu.ec.modelo;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -13,24 +14,24 @@ import java.util.List;
  */
 public class Cliente {
 
-    private int cedula;
+    private String cedula;
     private String nombre;
     private String direccion;
     private String telefono;
     private List<Vehiculo> vehiculos;
 
-    public Cliente(int cedula, String nombre, String direccion, String telefono) {
+    public Cliente(String cedula, String nombre, String direccion, String telefono) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -69,7 +70,7 @@ public class Cliente {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 67 * hash + this.cedula;
+        hash = 31 * hash + Objects.hashCode(this.cedula);
         return hash;
     }
 
@@ -85,11 +86,13 @@ public class Cliente {
             return false;
         }
         final Cliente other = (Cliente) obj;
-        if (this.cedula != other.cedula) {
+        if (!Objects.equals(this.cedula, other.cedula)) {
             return false;
         }
         return true;
     }
+
+    
 
     @Override
     public String toString() {

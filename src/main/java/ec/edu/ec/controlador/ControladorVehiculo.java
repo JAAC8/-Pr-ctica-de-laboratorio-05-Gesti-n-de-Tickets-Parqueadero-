@@ -39,4 +39,9 @@ public class ControladorVehiculo {
     public void eliminar() {
 
     }
+    
+    public boolean buscar(String placa){
+        
+        return false;
+    }
 }

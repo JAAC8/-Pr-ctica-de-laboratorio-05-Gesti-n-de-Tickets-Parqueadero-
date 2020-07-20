@@ -34,7 +34,7 @@ public class Gestion extends javax.swing.JFrame {
     public Gestion() {
         initComponents();
 
-        vIV = new IngresoVehiculo();
+        vIV = new IngresoVehiculo(cV);
 
         cC = new ControladorCliente(cT, cV);
         cV = new ControladorVehiculo(cC, cT);

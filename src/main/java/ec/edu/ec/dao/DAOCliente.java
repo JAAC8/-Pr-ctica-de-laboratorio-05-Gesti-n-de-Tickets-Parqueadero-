@@ -8,6 +8,7 @@ package ec.edu.ec.dao;
 import ec.edu.ec.modelo.Cliente;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Iterator;
 
 /**
  *
@@ -27,8 +28,16 @@ public class DAOCliente implements DAOClienteI {
     }
 
     @Override
-    public Cliente read(int cedula) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Cliente read(String cedula) {
+        Iterator it = clientes.iterator();
+        while (it.hasNext()) {
+            Cliente c = (Cliente) it.next();
+            if(c.getCedula().equals(cedula)){
+                return c;
+            }
+            
+        }
+        return null;
     }
 
     @Override
@@ -37,7 +46,7 @@ public class DAOCliente implements DAOClienteI {
     }
 
     @Override
-    public void delete(int cedula) {
+    public void delete(String cedula) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
