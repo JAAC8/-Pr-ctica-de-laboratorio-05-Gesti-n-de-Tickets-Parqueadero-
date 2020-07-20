@@ -25,7 +25,7 @@ public class ControladorCliente {
         this.cV = cV;
     }
 
-    public void crear(int cedula, String nombre, String direccion, String telefono) {
+    public void crear(String cedula, String nombre, String direccion, String telefono) {
         Cliente c = new Cliente(cedula, nombre, direccion, telefono);
         dao.create(c);
     }
