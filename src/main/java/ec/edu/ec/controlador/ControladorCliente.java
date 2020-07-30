@@ -22,7 +22,7 @@ public class ControladorCliente {
     public ControladorCliente(ControladorTicket cT, ControladorVehiculo cV) {
         this.dao = new DAOCliente();
         this.cT = cT;
-        this.cV = cV;
+        this.cV = cV;        
     }
 
     public void crear(String cedula, String nombre, String direccion, String telefono) {
@@ -40,5 +40,9 @@ public class ControladorCliente {
 
     public void eliminar() {
 
+    }
+    
+    public boolean buscar(String cedula){
+        return dao.buscar(cedula);
     }
 }

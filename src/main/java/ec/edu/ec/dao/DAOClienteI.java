@@ -22,4 +22,6 @@ public interface DAOClienteI {
     public void delete(String cedula);
 
     public void findAll();
+    
+    public boolean buscar(String cedula);
 }

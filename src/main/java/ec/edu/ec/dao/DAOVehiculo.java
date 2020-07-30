@@ -17,15 +17,17 @@ import java.util.Iterator;
  */
 public class DAOVehiculo implements DAOVehiculoI {
 
-    Set<Vehiculo> vehiculos;
-    
+    private Set<Vehiculo> vehiculos;
+    private int cont;
     public DAOVehiculo(){
         this.vehiculos = new HashSet<Vehiculo>();
+        this.cont = 0;
     }
     
     @Override
     public void create(Vehiculo v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.vehiculos.add(v);
+        this.cont++;
     }
 
     @Override
@@ -48,7 +50,8 @@ public class DAOVehiculo implements DAOVehiculoI {
 
     @Override
     public void delete(String placa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.cont--;
     }
 
     @Override
@@ -66,6 +69,10 @@ public class DAOVehiculo implements DAOVehiculoI {
             
         }        
         return false;
+    }
+    
+    public int getNumeroVehiculos(){
+        return this.cont;
     }
 
 }

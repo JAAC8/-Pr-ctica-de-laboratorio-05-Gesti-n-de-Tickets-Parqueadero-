@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,29 +16,17 @@ import ec.edu.ec.dao.DAOVehiculo;
  *
  * @author José Andrés Abad
  */
-public class Gestion extends javax.swing.JFrame {
+public class VentanaPrincipal extends javax.swing.JFrame {
 
-    private IngresoVehiculo vIV;
 
-    private ControladorCliente cC;
-    private ControladorVehiculo cV;
-    private ControladorTicket cT;
-
-    private DAOClienteI daoC;
-    private DAOVehiculo daoV;
-    private DAOTicket daoT;
 
     /**
      * Creates new form Gestion
      */
-    public Gestion() {
+    public VentanaPrincipal() {
         initComponents();
+        
 
-        vIV = new IngresoVehiculo(cV);
-
-        cC = new ControladorCliente(cT, cV);
-        cV = new ControladorVehiculo(cC, cT);
-        cT = new ControladorTicket(cC, cV);
     }
 
     /**
@@ -123,8 +111,7 @@ public class Gestion extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
-        desktopPane.add(vIV);
-        vIV.setVisible(true);
+
     }//GEN-LAST:event_openMenuItemActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -148,20 +135,21 @@ public class Gestion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Gestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Gestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Gestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Gestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Gestion().setVisible(true);
+                new VentanaPrincipal().setVisible(true);
             }
         });
     }

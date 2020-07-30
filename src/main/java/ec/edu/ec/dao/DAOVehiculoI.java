@@ -22,4 +22,8 @@ public interface DAOVehiculoI {
     public void delete(String placa);
 
     public void findAll();
+    
+    public boolean buscar(String placa);
+    
+    public int getNumeroVehiculos();
 }

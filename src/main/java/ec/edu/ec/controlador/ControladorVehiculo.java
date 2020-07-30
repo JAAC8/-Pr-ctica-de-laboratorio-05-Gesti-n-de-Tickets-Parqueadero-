@@ -7,6 +7,7 @@ package ec.edu.ec.controlador;
 
 import ec.edu.ec.dao.DAOVehiculoI;
 import ec.edu.ec.dao.DAOVehiculo;
+import ec.edu.ec.modelo.Vehiculo;
 
 /**
  *
@@ -24,8 +25,9 @@ public class ControladorVehiculo {
         this.cT = cT;
     }
 
-    public void crear() {
-
+    public void crear(String placa, String modelo, String marca) {
+        Vehiculo v = new Vehiculo(placa, marca, modelo);
+        this.dao.create(v);
     }
 
     public void leer() {
@@ -41,7 +43,11 @@ public class ControladorVehiculo {
     }
     
     public boolean buscar(String placa){
-        
+        this.dao.buscar(placa);
         return false;
+    }
+    
+    public int getNumeroVehiculos(){
+        return this.dao.getNumeroVehiculos();
     }
 }

@@ -16,15 +16,18 @@ import java.util.Iterator;
  */
 public class DAOCliente implements DAOClienteI {
 
-    Set<Cliente> clientes;
+    private Set<Cliente> clientes;
+    private int cont;
 
     public DAOCliente() {
-        clientes = new HashSet<>();
+        this.clientes = new HashSet<>();
+        this.cont=0;
     }
 
     @Override
     public void create(Cliente c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.clientes.add(c);
+        this.cont++;
     }
 
     @Override
@@ -32,10 +35,10 @@ public class DAOCliente implements DAOClienteI {
         Iterator it = clientes.iterator();
         while (it.hasNext()) {
             Cliente c = (Cliente) it.next();
-            if(c.getCedula().equals(cedula)){
+            if (c.getCedula().equals(cedula)) {
                 return c;
             }
-            
+
         }
         return null;
     }
@@ -53,6 +56,17 @@ public class DAOCliente implements DAOClienteI {
     @Override
     public void findAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean buscar(String cedula) {
+        Iterator it = clientes.iterator();
+        while (it.hasNext()) {
+            Cliente c = (Cliente) it.next();
+            if (c.getCedula().equals(cedula)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
